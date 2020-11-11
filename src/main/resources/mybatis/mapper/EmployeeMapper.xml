@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.EmployeeMapper">
+
+    <insert id="addEmployee" parameterType="Employee">
+        insert into luffy_test.employee(name,email,department_Id,gender,birth) value
+        (#{name},#{email},#{departmentId},#{gender},#{birth})
+    </insert>
+
+    <delete id="deleteEmployee">
+        delete from luffy_test.employee where id = #{id}
+    </delete>
+
+    <update id="updateEmployee" parameterType="Employee">
+        update luffy_test.employee
+        set name=#{name},email=#{email},department_Id=#{departmentId},gender=#{gender},birth=#{birth}
+        where id = #{id}
+    </update>
+
+    <select id="getEmployees" resultType="Employee">
+        select * from luffy_test.employee
+    </select>
+
+    <select id="getEmployee" resultType="Employee">
+        select * from luffy_test.employee where id = #{id}
+    </select>
+
+</mapper>

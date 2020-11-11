@@ -1,0 +1,24 @@
+server:
+  port: 9527 # 端口号
+  servlet:
+    context-path: / # 项目路径
+
+spring:
+  thymeleaf:
+    cache: false # 关闭模板引擎的缓存
+  messages:
+    basename: i18n.login # 国际化定位配置文件的真实位置（绑定login）
+  mvc:
+    format:
+      date: yyyy-MM-dd # 时间日期格式化
+
+  datasource: # 数据源
+    username: root
+    password: Wjm68818684.
+    url: jdbc:mysql://120.25.234.32:3306/luffy_test?useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis: # 整合mybatis
+  type-aliases-package: com.pojo # 别名
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
